@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { ArrowRight, Download, Github, Zap, Database, Brain, Server, ArrowRightLeft } from 'lucide-react';
 import { CurrentlyBuildingBanner } from './CurrentlyBuildingBanner';
 import { StatBar } from './StatBar';
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
             </button>
 
             <a
-              href="https://drive.google.com/file/d/1xtgD5Mf0zccBgTH-SLA5lB7AeGFfhj_F/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Jh92ftzKVZHI5kmY8Q1xL7HqUj_QyC-W/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-semibold rounded-xl min-h-[44px] text-sm md:text-base border border-slate-200 dark:border-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"

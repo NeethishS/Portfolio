@@ -25,7 +25,7 @@ export const DownloadCV: React.FC<DownloadCVProps> = ({
     lg: 24,
   };
 
-  const resumeUrl = 'https://drive.google.com/file/d/1xtgD5Mf0zccBgTH-SLA5lB7AeGFfhj_F/view?usp=drive_link';
+  const resumeUrl = 'https://drive.google.com/file/d/1Jh92ftzKVZHI5kmY8Q1xL7HqUj_QyC-W/view?usp=drive_link';
 
   const handleDownload = () => {
     analytics.trackEvent('CV', 'Download', 'Neethish_S_Resume');

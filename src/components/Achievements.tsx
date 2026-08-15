@@ -31,15 +31,15 @@ const Achievements: React.FC = () => {
             >
               <GlassCard className="p-6 md:p-8 border-l-4 border-l-blue-500 hover:border-l-blue-400 relative overflow-hidden group">
                 <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-xs font-semibold text-blue-600 dark:text-blue-400">
-                  IJCT Journal · 2026
+                  IJRPR Journal · Published
                 </div>
 
                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3 mt-2 pr-28">
-                  AgentCode Inspector — AI Code Review System
+                  Sign Language Detection System
                 </h3>
 
                 <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                  Published research on AI-assisted code review using semantic retrieval, LLM inference, and structured evaluation across software quality dimensions.
+                  Published research on real-time Sign Language Recognition and Computer Vision algorithms designed to bridge communication gaps for hearing and speech impaired individuals.
                 </p>
 
                 <div className="mb-6">
@@ -49,29 +49,29 @@ const Achievements: React.FC = () => {
                   <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 flex-shrink-0 mt-1">•</span>
-                      <span>RAG pipeline with pgvector retrieval of project-specific coding guidelines</span>
+                      <span>Real-time hand gesture tracking and feature extraction computer vision pipeline</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 flex-shrink-0 mt-1">•</span>
-                      <span>Structured JSON output schema parsed into per-line review annotations</span>
+                      <span>Deep Learning model optimized for gesture classification with high accuracy</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 flex-shrink-0 mt-1">•</span>
-                      <span>Evaluation across security, performance, maintainability, and readability dimensions</span>
+                      <span>Published in International Journal of Research Publication and Reviews (IJRPR)</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="flex flex-wrap gap-4 items-center">
                   <a
-                    href="https://github.com/NeethishS"
+                    href="https://ijrpr.com/uploads/V6ISSUE10/IJRPR54355.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-all duration-200 hover:scale-105 min-h-[44px] text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 shadow-sm"
-                    aria-label="View publication details"
+                    aria-label="View published paper PDF for Sign Language Detection"
                   >
                     <ExternalLink size={16} />
-                    <span>View Publication</span>
+                    <span>View Published Paper (PDF)</span>
                   </a>
                 </div>
               </GlassCard>

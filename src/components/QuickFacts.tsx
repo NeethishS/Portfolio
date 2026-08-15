@@ -27,7 +27,7 @@ const QuickFacts: React.FC = () => {
     {
       icon: '📄',
       label: 'Publication',
-      text: 'IJCT Journal · AgentCode Inspector',
+      text: 'IJRPR Journal · Sign Language Detection',
     },
   ];
 
