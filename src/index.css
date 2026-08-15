@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --primary-color: 59 130 246;
+    --secondary-color: 16 185 153;
+    --accent-color: 139 92 246;
+  }
+
+  body {
+    @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Enable GPU acceleration for better performance */
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Smooth scrolling for section transitions */
+    scroll-padding-top: 80px; /* Account for sticky header */
+  }
+
+  /* Optimized scrolling for smooth page transitions */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+      /* Enable smooth scroll for all browsers */
+      -webkit-scroll-behavior: smooth;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Typography */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Button base styles */
+  button {
+    @apply transition-all duration-200 ease-out;
+    /* Use transform for smoother animations */
+    will-change: transform;
+  }
+
+  /* Remove default focus outline and add custom */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900;
+  }
+
+  /* Enhanced focus styles for keyboard navigation */
+  .keyboard-nav-active button:focus-visible,
+  .keyboard-nav-active a:focus-visible,
+  .keyboard-nav-active [role="button"]:focus-visible {
+    @apply ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  /* Smooth focus transitions */
+  button,
+  a,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    @apply transition-all duration-200;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-slate-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500 dark:bg-slate-500;
+  }
+
+  /* Optimize images for performance */
+  img {
+    /* Enable GPU acceleration for image transforms */
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  /* Glass card component with performance optimization */
+  .glass-card {
+    @apply relative rounded-lg border backdrop-blur-md transition-all duration-300;
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* Enable GPU acceleration */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .dark .glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card:hover {
+    @apply shadow-lg;
+    /* Use transform instead of box-shadow for better performance */
+    transform: translateZ(0) scale(1.02) translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 md:px-8 lg:px-12;
+  }
+
+  /* Heading styles */
+  .section-heading {
+    @apply mb-12 md:mb-16;
+  }
+
+  .section-heading h2 {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+
+  .section-heading p {
+    @apply text-lg text-slate-600 dark:text-slate-400;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 ease-out;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+    /* Optimize button performance */
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600 active:scale-95;
+    /* Avoid expensive box-shadow on hover, use transform instead */
+  }
+
+  .btn-secondary {
+    @apply bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-95;
+  }
+
+  /* Animations - optimized for 60 FPS */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) translateZ(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateZ(0);
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Optimize scrolling performance */
+  @media (prefers-reduced-motion: no-preference) {
+    .smooth-scroll {
+      scroll-behavior: smooth;
+      /* Use translateZ for GPU acceleration */
+      transform: translateZ(0);
+    }
+  }
+
+  /* Performance: contain layout calculations */
+  .contain-layout {
+    contain: layout style paint;
+  }
+
+  /* Lazy-loaded images */
+  img[loading="lazy"] {
+    /* Prevent layout shift while loading */
+    min-height: 1px;
+  }
+}
+
+/* Print styles for CV/resume export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide navigation, background patterns, buttons, scroll indicators, particles, theme toggles */
+  header, footer, nav, button, 
+  .fixed, .absolute, [role="banner"],
+  #scroll-indicator, .no-print,
+  .share-buttons, #currently-building,
+  [aria-label="Toggle theme"], [aria-label="Toggle menu"] {
+    display: none !important;
+  }
+
+  /* Reset main content container */
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Reset section styles for print */
+  section {
+    padding: 1.5rem 0 !important;
+    margin: 0 !important;
+    page-break-inside: auto;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  h1, h2, h3, h4 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 0.25rem;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  p, li, span, a {
+    color: #0f172a !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #64748b;
+  }
+
+  /* Ensure cards and grids are printable and look nice on paper */
+  .glass-card, .project-card, .achievement-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #cbd5e1 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-bottom: 0.75rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Reset layout flex/grid to linear block for page width */
+  .grid {
+    display: block !important;
+  }
+}
