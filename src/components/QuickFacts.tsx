@@ -26,8 +26,8 @@ const QuickFacts: React.FC = () => {
     },
     {
       icon: '📄',
-      label: 'Publication',
-      text: 'IJRPR Journal · Sign Language Detection',
+      label: 'Publications',
+      text: '2 Papers Published (IJRPR & IJCT)',
     },
   ];
 

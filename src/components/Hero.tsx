@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
           {/* 4 — Credibility */}
           <div className="h-a-4">
             <p className="text-sm md:text-base font-semibold text-blue-600 dark:text-blue-400 tracking-wide m-0">
-              Published researcher · 3 AI systems · 5 LLMs benchmarked
+              Published researcher (2 papers) · 3 AI systems · 5 LLMs benchmarked
             </p>
           </div>
 
@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
             <StatBar
               stats={[
                 { value: '3', label: 'AI Systems' },
-                { value: '1', label: 'Published Paper' },
+                { value: '2', label: 'Published Papers' },
                 { value: '5', label: 'LLMs Benchmarked' },
                 { value: '200+', label: 'LeetCode Problems' },
               ]}
